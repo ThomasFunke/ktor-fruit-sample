@@ -1,26 +1,18 @@
-import com.fasterxml.jackson.databind.SerializationFeature
+import com.fasterxml.jackson.databind.*
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.application.install
-import io.ktor.auth.Authentication
-import io.ktor.auth.UserIdPrincipal
-import io.ktor.auth.authenticate
-import io.ktor.auth.basic
-import io.ktor.features.ContentNegotiation
-import io.ktor.features.StatusPages
-import io.ktor.http.HttpStatusCode
+import io.ktor.auth.*
+import io.ktor.features.*
+import io.ktor.http.*
 import io.ktor.http.HttpStatusCode.Companion.Created
 import io.ktor.http.HttpStatusCode.Companion.NotFound
-import io.ktor.jackson.jackson
-import io.ktor.request.receive
-import io.ktor.response.respond
-import io.ktor.response.respondText
-import io.ktor.routing.get
-import io.ktor.routing.post
-import io.ktor.routing.route
-import io.ktor.routing.routing
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
+import io.ktor.jackson.*
+import io.ktor.request.*
+import io.ktor.response.*
+import io.ktor.routing.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 
 fun main(args: Array<String>) {
     embeddedServer(
